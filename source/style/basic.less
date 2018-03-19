@@ -1,0 +1,54 @@
+@color-main: #03A9F4;
+@color-main-light:#4fC3F7;
+@color-main-dark:#0288D1;
+
+@color-danger: #E91E63;
+@color-danger-light: #F06292;
+@color-danger-dark: #C2185B;
+
+@color-gray:#EEEEEE;
+@color-gray-light:#FAFAFA;
+@color-gray-dark:#9E9E9E;
+
+@color-black:#212121;
+@color-white:#FFFFFF;
+
+@shadow-low: rgba(0, 0, 0, 0.24) 0px 2px 4px,rgba(0, 0, 0, 0.07) 0px 5px 10px;
+@shadow-medium: rgba(0, 0, 0, 0.12) 0px 4px 8px,rgba(0, 0, 0, 0.07) 0px 10px 20px;
+@shadow-high: rgba(0, 0, 0, 0.12) 0px 10px 20px,rgba(0, 0, 0, 0.07) 0px 20px 40px;
+
+// *******
+
+@top:999;
+
+// *******
+
+@button-radius: 2px;
+@input-radius: 2px;
+@checkbox-radius:2px;
+@toast-radius:2px;
+@modal-radius:4px;
+
+// *******
+
+@grid: 8px;
+
+// *******
+
+.noselect(){
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@ease-strong:cubic-bezier(0.02,0.86,0.25,0.97);
+@ease-notice:cubic-bezier(0,1,0.5,1.4);
+@ease-strong-out:cubic-bezier(1,0,0.6,1);
+
+.transition(@props:all, @time:300ms, @ease:@ease-strong){
+    -webkit-transition: @props @time @ease;
+    -moz-transition: @props @time @ease;
+    -o-transition: @props @time @ease;
+    transition: @props @time @ease;
+}

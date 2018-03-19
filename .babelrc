@@ -1,0 +1,10 @@
+{
+    "presets": ["env"],
+    "plugins": [
+        "transform-decorators-legacy",
+        "syntax-dynamic-import",
+        "transform-runtime",
+        "transform-class-properties",
+        "add-module-exports"
+    ]
+}
