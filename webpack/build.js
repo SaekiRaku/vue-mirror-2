@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const fs = require("fs");
 
+process.env.NODE_ENV = "production";
 var compiler = webpack(require("./production.config.js"));
 
 compiler.run(function(err,stats){

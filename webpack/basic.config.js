@@ -2,12 +2,11 @@ var path = require("path");
 
 var utils = require("./utils");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
-    mode:"development",
-    entry: {
-        document: ["webpack-hot-middleware/client?reload=true", path.resolve(utils.path.document, "index.js")]
-    },
+    // mode:"development",
     output: {
         filename: '[name]/[name].js',
         path: utils.path.dist,
@@ -48,14 +47,18 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: "vue-loader"
+                loader: "vue-loader",
+                options:{
+                    extractCSS:process.env.NODE_ENV=="production"
+                }
             }
         ]
     },
-    performance:{
-        hints:false
-    },
+    // performance:{
+    //     hints:false
+    // },
     plugins: [
+        new ProgressBarPlugin(),
         new HtmlWebpackPlugin({
             filename: "index.html",
             template: path.resolve(utils.path.document, "index.html"),
