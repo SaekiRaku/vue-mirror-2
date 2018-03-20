@@ -21,6 +21,7 @@
   width: 100%;
   bottom: 38.2%;
   z-index: @top;
+  text-align: center;
   .noselect();
 }
 

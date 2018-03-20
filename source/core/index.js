@@ -1,7 +1,7 @@
 import utils from "utils";
 
 if (!!document) {
-    var youth = document.createElement("div");
+    var youth = document.createElement("span");
     youth.appendChild(document.createElement("v-toast"));
     document.body.appendChild(youth);
     var vm = new Vue({

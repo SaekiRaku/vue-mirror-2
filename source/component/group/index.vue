@@ -29,12 +29,12 @@ export default {
     handleChange(obj) {
       /*
         {
-          type: "radio" | "checkbox" | "group",
+          type: "string" | "checkbox" | "group",
           name: String,
           value: String | Array
         }
       */
-      if (obj.type == "radio") {
+      if (obj.type == "string") {
         this.$data.merge[obj.name] = obj.value;
       }else if(obj.type == "checkbox"){
         if(!this.$data.merge[obj.name]){

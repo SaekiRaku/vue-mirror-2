@@ -99,7 +99,7 @@ export default {
       }
     },
     close(){
-      if(this.$props.canclose){
+      if(this.$props.canclose==true){
           this.$data.display = false;
       }
     }

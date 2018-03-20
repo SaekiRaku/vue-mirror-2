@@ -1,7 +1,7 @@
 <template>
-  <div id="container" v-bind:class="['v-radio',disable?'disable':'']" @click="handleClick">
+  <div id="container" v-bind:class="['v-radio',disable?'disable':'']" @click="duang">
       <div id="radio">
-          <div id="dot" v-bind:class="[active?'':'deactive']"></div>
+          <div id="dot" v-bind:class="[vactive?'':'deactive']"></div>
       </div>
       <p id="label">
           <slot></slot>
@@ -52,6 +52,7 @@
   margin: 0px;
   float: left;
   margin-top: -1px;
+  line-height: 24px;
 }
 
 .deactive {
@@ -66,7 +67,7 @@ export default {
   data() {
     return {
       scope: "",
-      active: false
+      vactive: false
     };
   },
   props: {
@@ -76,31 +77,34 @@ export default {
     disable: {
       type:Boolean
     },
-    check: {
+    active: {
       type:Boolean
     },
     value: {}
+  },
+  watch: {
+    active(val) {
+      this.vactive = !val;
+      this.duang();
+    }
   },
   mounted() {
     this.scope = this.name || this.$parent.name || "";
     if (this.scope) {
       utils.event.registerEvent("radio_clear_" + this.scope, this.clearActive);
     }
-    if(this.check){
+    if(this.active){
       Vue.nextTick(()=>{
         this.duang();
       })
     }
   },
   methods: {
-    handleClick(evt) {
-      utils.event.triggerEvent("radio_clear_" + this.scope);
-      this.duang();
-    },
     duang() {
-      this.$data.active = true;
+      utils.event.triggerEvent("radio_clear_" + this.scope);
+      this.$data.vactive = true;
       var eventData = {
-        type: "radio",
+        type: "string",
         name: this.scope,
         value: this.value
       }
@@ -108,7 +112,7 @@ export default {
       utils.event.triggerEvent("group_"+this.scope, eventData);
     },
     clearActive() {
-      this.$data.active = false;
+      this.$data.vactive = false;
     }
   }
 };

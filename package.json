@@ -42,6 +42,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "marked": "^0.3.17",
     "vue-router": "^3.0.1"
   }
 }

@@ -32,7 +32,8 @@ module.exports = {
             "component": path.resolve(utils.path.source, "component"),
             "common": path.resolve(utils.path.source, "common"),
             "utils": path.resolve(utils.path.source, "utils"),
-            "style": path.resolve(utils.path.source, "style")
+            "style": path.resolve(utils.path.source, "style"),
+            "page": path.resolve(utils.path.document, "page")
         }
     },
     module: {
