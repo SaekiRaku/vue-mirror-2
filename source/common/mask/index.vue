@@ -12,15 +12,16 @@
     height: 100%;
     left: 0px;
     top: 0px;
-    opacity: 0;
-    background: @color-white;
+    background: rgba(255, 255, 255, 0);
     z-index: @top - 2;
-
+    
     .transition(all,400ms,ease-out);
   }
 
   .show {
-    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
   }
 
   .noevent {

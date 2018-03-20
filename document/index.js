@@ -15,6 +15,7 @@ const routes = [
     {path:"/install",component :require("page/install.vue").default},
     {path:"/usage",component :require("page/usage.vue").default},
     {path:"/button",component :require("page/button.vue").default},
+    {path:"/input",component :require("page/input.vue").default},
     {path:"/switch",component :require("page/switch.vue").default},
     {path:"/radio",component :require("page/radio.vue").default},
     {path:"/checkbox",component :require("page/checkbox.vue").default},

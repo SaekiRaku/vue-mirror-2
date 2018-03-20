@@ -94,7 +94,7 @@ export default {
         content
       });
       if (timeout == "auto") {
-        timeout = content.length * 300;
+        timeout = content.length * 200;
       }
       setTimeout(() => {
         this.removeToast(id);

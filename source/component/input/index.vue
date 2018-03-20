@@ -1,5 +1,13 @@
 <template>
-    <input type="text" id="input" v-bind:placeholder="placeholder" v-bind:class="['v-input']" @keyup="duang">
+    <input 
+        type="text"
+        id="input"
+        v-bind:placeholder="placeholder"
+        v-bind:class="['v-input',disable?'disable':'']"
+        v-bind:disabled='disable'
+        v-bind:value="value"
+        v-on:input="duang($event.target.value)"
+    />
 </template>
 
 <style lang="less" scoped>
@@ -8,16 +16,23 @@
 #input {
   color: @color-black;
   font-size: 16px;
-  border: 1px solid @color-gray;
+  border: none;
   border-radius: @input-radius;
   padding: @grid;
   outline: none;
-  .transition();
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px @color-gray;  
+  .transition(all,1s);
+}
+
+.disable {
+    background: @color-gray;
+    box-shadow: none !important;    
 }
 
 #input:hover,
 #input:focus {
-  border: 2px solid @color-main;
+  box-shadow: 0 0 0 2px @color-main;
 }
 </style>
 
@@ -25,10 +40,10 @@
 import utils from "utils";
 
 export default {
-    data() {
+    data(){
         return {
-            vvalue: ""
-        };
+            vvalue:''
+        }
     },
     props: {
         name: {
@@ -37,14 +52,12 @@ export default {
         disable: {
             type: Boolean
         },
-        active: {
-            type: Boolean
-        },
         placeholder: {
             type: String
         },
         value: {
-            type: String
+            type: String,
+            default:""
         }
     },
     mounted() {
@@ -57,14 +70,14 @@ export default {
         }
     },
     methods: {
-        duang(evt) {
-            this.$data.vvalue = evt.target.value;
+        duang(val) {
+            this.vvalue = val;
             var eventData = {
                 type: "string",
                 name: this.scope,
-                value: this.$data.vvalue
+                value: this.vvalue
             };
-            this.$emit("change", this.vvalue);
+            this.$emit("input", this.vvalue);
             utils.event.triggerEvent("group_" + this.scope, eventData);
         }
     }

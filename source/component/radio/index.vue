@@ -1,8 +1,6 @@
 <template>
   <div id="container" v-bind:class="['v-radio',disable?'disable':'']" @click="duang">
-      <div id="radio">
-          <div id="dot" v-bind:class="[vactive?'':'deactive']"></div>
-      </div>
+      <div id="radio"><div id="dot" v-bind:class="[vactive?'':'deactive']"></div></div>
       <p id="label">
           <slot></slot>
       </p>
@@ -19,6 +17,7 @@
 }
 
 #radio {
+  font-size: 0px;
   float: left;
   margin-right: @grid;
   text-align: center;
@@ -38,8 +37,8 @@
 }
 
 #dot {
-  display: inline-block;
   margin-top: 6px;
+  display: inline-block;
   width: 1*@grid;
   height: 1*@grid;
   border-radius: 1*@grid;

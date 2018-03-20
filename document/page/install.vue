@@ -1,15 +1,11 @@
 <template>
-    <div>
-        <v-button></v-button>
-    </div>
+<document>
+    <h1>
+        安装 / Install
+    </h1>
+
+    <p>
+        没空写
+    </p>
+</document>
 </template>
-
-<style>
-
-</style>
-
-<script>
-export default {
-
-};
-</script>
