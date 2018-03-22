@@ -9,6 +9,13 @@ import VGroup from "component/group/index.vue";
 import VRadio from "component/radio/index.vue";
 import VCheckbox from "component/checkbox/index.vue";
 import VModal from "component/modal/index.vue";
+import VCard from "component/card/index.vue";
+import VMessage from "component/message/index.vue";
+
+import VTitle from "component/document/title.vue";
+import VQuote from "component/document/quote.vue";
+import VDivider from "component/document/divider.vue";
+import VText from "component/document/text.vue";
 
 var components = {
     VRipple,
@@ -21,7 +28,14 @@ var components = {
     VGroup,
     VRadio,
     VCheckbox,
-    VModal
+    VModal,
+    VCard,
+    VMessage,
+
+    VTitle,
+    VQuote,
+    VDivider,
+    VText
 }
 
 export default {

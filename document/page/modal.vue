@@ -15,7 +15,7 @@
             </div>
         </v-modal>
 
-        <v-modal name="modal2" canclose="false">
+        <v-modal name="modal2" :canclose="false">
             <div class="content">
                 不可关闭模态窗
                 <v-button type="danger" @click="closeModal2">关闭</v-button>
@@ -68,7 +68,7 @@
         普通模态窗
     &lt;/v-modal&gt;
 
-    &lt;v-modal name="modal2" canclose="false"&gt;
+    &lt;v-modal name="modal2" :canclose="false"&gt;
         不可关闭模态窗
         &lt;v-button type="danger" @click="closeModal2"&gt;关闭&lt;/v-button&gt;
     &lt;/v-modal&gt;
