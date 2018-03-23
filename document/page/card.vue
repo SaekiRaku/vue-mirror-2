@@ -4,21 +4,21 @@
 
     <h2>Example</h2>
     <h6>效果演示</h6>
-    <v-card level="0" hover="true">
+    <v-card :level="0" :hover="true">
         <v-title>
             <h1>Card</h1>
             <h2>level 0</h2>
         </v-title>
     </v-card>
 
-    <v-card level="1" hover="true">
+    <v-card :level="1" :hover="true">
         <v-title>
             <h1>Card</h1>
             <h2>level 1</h2>
         </v-title>
     </v-card>
 
-    <v-card level="2" hover="true">
+    <v-card :level="2" :hover="true">
         <v-title>
             <h1>Card</h1>
             <h2>level 2</h2>

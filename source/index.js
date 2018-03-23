@@ -9,8 +9,10 @@ import VGroup from "component/group/index.vue";
 import VRadio from "component/radio/index.vue";
 import VCheckbox from "component/checkbox/index.vue";
 import VModal from "component/modal/index.vue";
-import VCard from "component/card/index.vue";
 import VMessage from "component/message/index.vue";
+import VCard from "component/card/index.vue";
+import VAvatar from "component/avatar/index.vue";
+import VTag from "component/tag/index.vue";
 
 import VTitle from "component/document/title.vue";
 import VQuote from "component/document/quote.vue";
@@ -29,8 +31,10 @@ var components = {
     VRadio,
     VCheckbox,
     VModal,
-    VCard,
     VMessage,
+    VCard,
+    VAvatar,
+    VTag,
 
     VTitle,
     VQuote,

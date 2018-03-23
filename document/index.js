@@ -27,6 +27,8 @@ const routes = [
     {path:"/toast",component :require("page/toast.vue").default},
     {path:"/message",component :require("page/message.vue").default},
     {path:"/card",component :require("page/card.vue").default},
+    {path:"/avatar",component :require("page/avatar.vue").default},
+    {path:"/tag",component :require("page/tag.vue").default},
     {path:"/document",component :require("page/document.vue").default}
 ]
 

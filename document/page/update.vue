@@ -6,6 +6,17 @@
 
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.4</h1>
+            <h2>2018-03-23</h2>
+        </v-title>
+        <ul>
+            <li>增加Avatar头像组件及文档</li>
+            <li>增加Tag标签组件及文档</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <v-title>
             <h1>Ver 0.0.3</h1>
             <h2>2018-03-22</h2>
         </v-title>
