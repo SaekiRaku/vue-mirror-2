@@ -6,6 +6,16 @@
 
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.5</h1>
+            <h2>2018-03-28</h2>
+        </v-title>
+        <ul>
+            <li>增加Tab标签页组件及文档</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <v-title>
             <h1>Ver 0.0.4</h1>
             <h2>2018-03-23</h2>
         </v-title>

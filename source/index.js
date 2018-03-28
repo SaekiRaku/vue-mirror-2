@@ -14,6 +14,9 @@ import VCard from "component/card/index.vue";
 import VAvatar from "component/avatar/index.vue";
 import VTag from "component/tag/index.vue";
 
+import VTab from "component/tab/tab.vue";
+import VPage from "component/tab/page.vue";
+
 import VTitle from "component/document/title.vue";
 import VQuote from "component/document/quote.vue";
 import VDivider from "component/document/divider.vue";
@@ -35,6 +38,9 @@ var components = {
     VCard,
     VAvatar,
     VTag,
+
+    VTab,
+    VPage,
 
     VTitle,
     VQuote,

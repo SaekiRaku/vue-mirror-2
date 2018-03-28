@@ -29,6 +29,7 @@ const routes = [
     {path:"/card",component :require("page/card.vue").default},
     {path:"/avatar",component :require("page/avatar.vue").default},
     {path:"/tag",component :require("page/tag.vue").default},
+    {path:"/tab",component :require("page/tab.vue").default},
     {path:"/document",component :require("page/document.vue").default}
 ]
 
