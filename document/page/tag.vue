@@ -6,9 +6,10 @@
         <h6>效果演示</h6>
 
         <v-tag>标签 1</v-tag>
-        <v-tag>标签 2</v-tag>
+        <v-tag disable>标签 2（禁用）</v-tag>
         <v-tag :active="true">标签 3（默认选中）</v-tag>
         <v-tag>标签 4</v-tag>
+        <v-tag>标签 5</v-tag>
 
         <h2>Usage</h2>
         <h6>使用方法</h6>

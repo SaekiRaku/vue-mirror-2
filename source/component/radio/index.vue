@@ -93,7 +93,7 @@ export default {
       utils.event.registerEvent("radio_clear_" + this.scope, this.clearActive);
     }
     if(this.active){
-      Vue.nextTick(()=>{
+      this.$nextTick(()=>{
         this.duang();
       })
     }

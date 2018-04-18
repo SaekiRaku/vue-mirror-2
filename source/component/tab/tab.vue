@@ -88,7 +88,7 @@ export default {
             return;
         }
         utils.event.registerEvent(`tab_add_${this.name}`, this.addTab);
-        Vue.nextTick(()=>{
+        this.$nextTick(()=>{
             this.active(0);
         })
     },
@@ -98,7 +98,7 @@ export default {
         },
         active(index) {
             this.now = index;
-            Vue.nextTick(()=>{
+            this.$nextTick(()=>{
                 if(!!this.$refs["tabs_"+index][0]){
                     this.width = this.$refs["tabs_"+index][0].offsetWidth;
                     this.position = this.$refs["tabs_"+index][0].offsetLeft;

@@ -29,14 +29,14 @@ export default {
     handleChange(obj) {
       /*
         {
-          type: "string" | "checkbox" | "group",
+          type: "string" | "array" | "group",
           name: String,
           value: String | Array
         }
       */
       if (obj.type == "string") {
         this.$data.merge[obj.name] = obj.value;
-      }else if(obj.type == "checkbox"){
+      }else if(obj.type == "array"){
         if(!this.$data.merge[obj.name]){
           this.$data.merge[obj.name] = []
         }

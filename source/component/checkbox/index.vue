@@ -113,7 +113,7 @@ export default {
     this.scope = this.name || this.$parent.name || "";
     if(this.active){
       this.$data.vactive = !this.active;
-      Vue.nextTick(()=>{
+      this.$nextTick(()=>{
         this.duang();
       })
     }
@@ -122,7 +122,7 @@ export default {
     duang() {
       this.$data.vactive = !this.$data.vactive;
       var eventData = {
-        type: "checkbox",
+        type: "array",
         name: this.scope,
         value: this.value,
         checked: this.$data.vactive

@@ -22,6 +22,7 @@ const routes = [
     {path:"/switch",component :require("page/switch.vue").default},
     {path:"/radio",component :require("page/radio.vue").default},
     {path:"/checkbox",component :require("page/checkbox.vue").default},
+    {path:"/dropdown",component :require("page/dropdown.vue").default},
     {path:"/group",component :require("page/group.vue").default},
     {path:"/modal",component :require("page/modal.vue").default},
     {path:"/toast",component :require("page/toast.vue").default},

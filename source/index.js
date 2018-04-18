@@ -1,6 +1,7 @@
 import VRipple from "common/ripple/index.vue";
 import VToast from "common/toast/index.vue";
 import VMask from "common/mask/index.vue";
+import VItem from "common/item/index.vue";
 
 import VButton from "component/button/index.vue";
 import VInput from "component/input/index.vue";
@@ -8,6 +9,7 @@ import VSwitch from "component/switch/index.vue";
 import VGroup from "component/group/index.vue";
 import VRadio from "component/radio/index.vue";
 import VCheckbox from "component/checkbox/index.vue";
+import VDropdown from "component/dropdown/index.vue";
 import VModal from "component/modal/index.vue";
 import VMessage from "component/message/index.vue";
 import VCard from "component/card/index.vue";
@@ -26,6 +28,7 @@ var components = {
     VRipple,
     VToast,
     VMask,
+    VItem,
     
     VButton,
     VInput,
@@ -33,6 +36,7 @@ var components = {
     VGroup,
     VRadio,
     VCheckbox,
+    VDropdown,
     VModal,
     VMessage,
     VCard,
@@ -54,5 +58,14 @@ export default {
             var res = Vue.component(i,components[i]);
         }
         Vue.prototype.youth = require("core/index.js");
+
+        if (!!document) {
+            var youth = document.createElement("span");
+            youth.appendChild(document.createElement("v-toast"));
+            document.body.appendChild(youth);
+            var vm = new Vue({
+                el: youth
+            });
+        }
     }
 }

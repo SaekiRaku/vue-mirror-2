@@ -82,7 +82,7 @@ export default {
   mounted() {
     this.scope = this.name || this.$parent.name || "";
     if(this.active) {
-      Vue.nextTick(() => {
+      this.$nextTick(() => {
         this.duang();
       });
     }

@@ -27,7 +27,7 @@ export default {
         utils.event.registerEvent(`tab_active_${this.$parent.name}`, val => {
             this.show = this.title == val;
         });
-        Vue.nextTick(() => {
+        this.$nextTick(() => {
             utils.event.triggerEvent(`tab_add_${this.$parent.name}`, this.title);
         });
     }

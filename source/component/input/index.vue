@@ -64,7 +64,7 @@ export default {
         this.scope = this.name || this.$parent.name || "";
         if (this.value) {
             this.$data.vvalue = this.value;
-            Vue.nextTick(() => {
+            this.$nextTick(() => {
                 this.duang();
             });
         }

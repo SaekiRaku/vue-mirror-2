@@ -6,6 +6,19 @@
 
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.6</h1>
+            <h2>2018-04-18</h2>
+        </v-title>
+        <ul>
+            <li>增加Dropdown下拉框组件及文档</li>
+            <li>Tag标签组件增加禁用样式</li>
+            <li>Tag标签组件增加对Group组件的支持</li>
+            <li>修改Vue引用方式，解决Vue未定义的问题</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <v-title>
             <h1>Ver 0.0.5</h1>
             <h2>2018-03-28</h2>
         </v-title>
