@@ -6,6 +6,17 @@
 
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.7</h1>
+            <h2>2018-04-19</h2>
+        </v-title>
+        <ul>
+            <li>为Input输入框组件增加type类型</li>
+            <li>修改Dropdown下拉框组件默认值无效的问题</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <v-title>
             <h1>Ver 0.0.6</h1>
             <h2>2018-04-18</h2>
         </v-title>

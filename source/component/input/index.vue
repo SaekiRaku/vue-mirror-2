@@ -1,6 +1,6 @@
 <template>
     <input 
-        type="text"
+        v-bind:type="type"
         id="input"
         v-bind:placeholder="placeholder"
         v-bind:class="['v-input',disable?'disable':'']"
@@ -47,6 +47,9 @@ export default {
     },
     props: {
         name: {
+            type: String
+        },
+        type: {
             type: String
         },
         disable: {

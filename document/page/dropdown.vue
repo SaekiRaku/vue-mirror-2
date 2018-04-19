@@ -5,7 +5,7 @@
         <h2>Example</h2>
         <h6>效果演示</h6>
 
-        <v-dropdown>
+        <v-dropdown value=" ">
             <v-item>A</v-item>
             <v-item>B</v-item>
             <v-item>C</v-item>
