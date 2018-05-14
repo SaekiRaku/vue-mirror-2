@@ -1,7 +1,7 @@
 <template>
-  <div id="container" v-bind:class="['v-radio',disable?'disable':'']" @click="duang">
-      <div id="radio"><div id="dot" v-bind:class="[vactive?'':'deactive']"></div></div>
-      <p id="label">
+  <div v-bind:class="['v-radio',disable?'disable':'']" @click="duang">
+      <div class="v-radio-box"><div v-bind:class="['v-radio-dot',vactive?'':'deactive']"></div></div>
+      <p class="v-label">
           <slot></slot>
       </p>
   </div>
@@ -10,13 +10,13 @@
 <style lang="less" scoped>
 @import "~style/basic.less";
 
-#container {
+.v-radio {
   cursor: pointer;
   display: inline-block;
   .noselect();
 }
 
-#radio {
+.v-radio-box {
   font-size: 0px;
   float: left;
   margin-right: @grid;
@@ -36,7 +36,7 @@
     }
 }
 
-#dot {
+.v-radio-dot {
   margin-top: 6px;
   display: inline-block;
   width: 1*@grid;
@@ -47,7 +47,7 @@
   .transition();
 }
 
-#label {
+.v-label {
   margin: 0px;
   float: left;
   margin-top: -1px;

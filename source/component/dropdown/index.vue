@@ -1,10 +1,10 @@
 <template>
-  <div id="container" v-bind:class="['v-dropdown',disable?'disable':'']" @click.stop="duang">
-      <div id="box">
+  <div v-bind:class="['v-dropdown',disable?'disable':'']" @click.stop="duang">
+      <div class="v-dropdown-box">
         {{vvalue}}
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDE3M0U1RjkzQUUwMTFFOEIyMjBBMDJGMEM5M0YxQ0UiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDE3M0U1RkEzQUUwMTFFOEIyMjBBMDJGMEM5M0YxQ0UiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0MTczRTVGNzNBRTAxMUU4QjIyMEEwMkYwQzkzRjFDRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0MTczRTVGODNBRTAxMUU4QjIyMEEwMkYwQzkzRjFDRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsS2TdMAAAAGUExURSgoKP///9oR+5IAAAACdFJOU/8A5bcwSgAAAalJREFUeNrs2zliw0AMA8DN/z+d2im1PBBr+AJPI0sgeH6+ZA4ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjI56/4MyOQMzPdkDM3rZBzUiUn19EIOSdX8krIARmQgIC8EeKp5Q/Ru9Yr3n6/5Xuk+wsx1BH7qTsRPkQ6HqUoiY5ncVCg42Guled4GtDFOR4njWmO55FpmOMi+81y3ITYUY6rND7JcbdWCHJc7kdyHLeLnhjH9cYqxXG/egtxFOwQMxwVy9AIR8lWN8FRs54OcBTt2fcdVYWBdUdZ82HbUVfhWHYUdlF2HZWlmlVHaTto01Fbc1p0FPe19hzVxbM1R3mDbstRXwVccjR0GnccHeXMFUdLy3TD0VOXXXA09X7nHV0F5nFHWxN72tFXKR92NHbjZx2dJf9RR+u1wqSj9+xi0NF8PzLn6D6EGXO0X/RMOSZOk/oRQ5CZAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAfnv8yvAAHvgibTf9GwZAAAAAElFTkSuQmCC" alt="">
       </div>
-      <div id="list" v-bind:class="[toggle?'open':'close']">
+      <div v-bind:class="['v-dropdown-list',toggle?'open':'close']">
         <slot>
 
         </slot>
@@ -15,7 +15,7 @@
 <style lang="less" scoped>
 @import "~style/basic.less";
 
-#container {
+.v-dropdown {
     position: relative;
     min-width: 150px;
     cursor: pointer;
@@ -23,7 +23,7 @@
     .noselect();
 }
 
-#box {
+.v-dropdown-box {
     padding: 0px 2*@grid;
     line-height: 40px;
     min-height: 40px;
@@ -40,11 +40,11 @@
     }
 }
 
-#box:hover {
+.v-dropdown-box:hover {
     box-shadow: 0 0 0 2px @color-main;
 }
 
-#list {
+.v-dropdown-list {
     width: 100%;
     max-height: 300px;
     overflow-y: auto;
@@ -110,15 +110,29 @@ export default {
         }
     },
     mounted() {
+        this.scope = this.name || this.$parent.name || "";
         this.vvalue = this.value || "请选择...";
+        if (this.vvalue != "请选择...") {
+            this.$nextTick(() => {
+                var eventData = {
+                    type: "string",
+                    name: this.scope,
+                    value: this.$data.vvalue
+                };
+                this.$emit("change", eventData);
+
+                utils.event.triggerEvent("group_" + this.scope, eventData);
+            });
+        }
+
         document.addEventListener("click", () => {
             this.toggle = false;
         });
     },
-    methods: {
-        duang(evt) {
-            if (evt.target.className == "v-item") {
-                this.vvalue = evt.target.innerHTML;
+    watch:{
+        value(value){
+            this.vvalue = value || "请选择...";
+            if (this.vvalue != "请选择...") {
                 var eventData = {
                     type: "string",
                     name: this.scope,
@@ -128,6 +142,23 @@ export default {
 
                 utils.event.triggerEvent("group_" + this.scope, eventData);
             }
+        }
+    },
+    methods: {
+        duang(evt) {
+            if (evt && evt.target.className == "v-item") {
+                this.vvalue = evt.target.innerHTML;
+
+                var eventData = {
+                    type: "string",
+                    name: this.scope,
+                    value: this.$data.vvalue
+                };
+                this.$emit("change", eventData);
+
+                utils.event.triggerEvent("group_" + this.scope, eventData);
+            }
+
             this.toggle = !this.toggle;
         }
     }

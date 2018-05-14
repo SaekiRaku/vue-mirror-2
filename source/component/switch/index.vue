@@ -1,13 +1,13 @@
 <template>
-    <div id="switch" v-bind:class="['v-switch',vactive?'active':'deactive',disable?'disable':'']" @click='duang'>
-        <div id="block"></div>
+    <div v-bind:class="['v-switch',vactive?'active':'deactive',disable?'disable':'']" @click='duang'>
+        <div class="v-switch-block"></div>
     </div>
 </template>
 
 <style lang="less" scoped>
 @import "~style/basic.less";
 
-#switch {
+.v-switch {
   display: inline-block;
   width: 5*@grid;
   height: 3*@grid;
@@ -19,7 +19,7 @@
   .transition(all,300ms,ease-in-out);
 }
 
-#block {
+.v-switch-block {
   background: @color-white;
   width: 3*@grid;
   height: 3*@grid;
@@ -36,7 +36,7 @@
 .active {
   background: @color-main;
 
-  #block {
+  .v-switch-block {
     margin-left: 2*@grid;
   }
 }
@@ -45,7 +45,7 @@
   background: @color-gray-dark;
   pointer-events: none;
 
-  #block {
+  .v-switch-block {
     background: @color-gray;
     box-shadow: none;
   }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="container" v-bind:class="display?'':'noevent'" @click.self="close">
+    <div v-bind:class="['v-modal-container',display?'':'noevent']" @click.self="close">
       <div v-bind:class="['v-modal',display?'':'hidden']">
           <slot></slot>
       </div>
@@ -12,7 +12,7 @@
 <style lang="less" scoped>
 @import "~style/basic.less";
 
-#container {
+.v-modal-container {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -26,7 +26,7 @@
   overflow: auto;
 }
 
-#container:before {
+.v-modal-container:before {
   content: "";
   display: inline-block;
   height: 100%;
@@ -48,6 +48,7 @@
 
 .noevent {
   pointer-events: none !important;
+  overflow: hidden !important;
 }
 
 .hidden {

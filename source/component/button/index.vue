@@ -1,5 +1,5 @@
 <template>
-    <div id="button" v-bind:class="['v-button',type,shape,size,disable?'disable':'']" @click="handleClick">
+    <div v-bind:class="['v-button',type,shape,size,disable?'disable':'']" @click="handleClick">
         <v-ripple v-bind:position="position" v-bind:theme="theme" v-bind:shape="shape"></v-ripple>
         <slot></slot>
     </div>
@@ -8,7 +8,8 @@
 <style lang="less" scoped>
 @import "~style/basic.less";
 
-#button {
+.v-button {
+  // border: transparent 1px solid;
   position: relative;
   padding: @grid 3*@grid;
   font-size: 16px;
@@ -20,7 +21,7 @@
   .transition();
 }
 
-#button:hover {
+.v-button:hover {
   // transform: translate(0px, -2px);
 }
 

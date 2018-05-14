@@ -18,7 +18,7 @@
         </v-button>
 
         <v-button type="primary">
-            Pirmary Button
+            Primary Button
         </v-button>
 
         <v-button type="danger">
@@ -72,6 +72,18 @@
                 </td>
                 <td>
                     rectangle
+                </td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>
+                    按钮大小
+                </td>
+                <td>
+                    small | large
+                </td>
+                <td>
+                    small
                 </td>
             </tr>
             <tr>

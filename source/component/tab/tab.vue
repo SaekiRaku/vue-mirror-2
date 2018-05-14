@@ -1,10 +1,10 @@
 <template>
     <div class="v-tab">
-        <div id="header" :class="align">
-            <div id="slide" :style="{'width':width+'px','left':position+'px'}"></div>
+        <div :class="['v-tab-header',align]">
+            <div class="v-tab-slide" :style="{'width':width+'px','left':position+'px','top':top+'px'}"></div>
             <div class="tab" v-for="(tab, index) in tabs" :key="index" @click="active(index)" :ref="'tabs_'+index">{{tab}}</div>
         </div>
-        <div id="v-content">
+        <div class="v-tab-content">
             <slot>
 
             </slot>
@@ -15,7 +15,7 @@
 <style lang="less" scoped>
 @import "~style/basic.less";
 
-#header {
+.v-tab-header {
     .noselect();
     width: 100%;
     margin: 0px auto;
@@ -24,7 +24,7 @@
     position: relative;
 }
 
-#slide {
+.v-tab-slide {
     height: 2px;
     top: 50px;
     background: @color-main;
@@ -52,7 +52,7 @@
     text-align: center;
 }
 
-#content {
+.v-tab-content {
     position: relative;
     width: 100%;
     height: auto;
@@ -79,6 +79,7 @@ export default {
             tabs: [],
             now: 0,
 
+            top:0,
             width:0,
             position:0
         };
@@ -101,6 +102,8 @@ export default {
             this.$nextTick(()=>{
                 if(!!this.$refs["tabs_"+index][0]){
                     this.width = this.$refs["tabs_"+index][0].offsetWidth;
+                    this.top = this.$refs["tabs_"+index][0].offsetHeight;
+                    console.log(this.top);
                     this.position = this.$refs["tabs_"+index][0].offsetLeft;
                 }
             })

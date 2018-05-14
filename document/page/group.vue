@@ -11,7 +11,7 @@
                     <v-group name="form" @change="handleChange">
                         <v-group name="name">
                             <p>你的姓名是？</p>
-                            <v-input name="name"></v-input>
+                            <v-input :value="'Thomas'"></v-input>
                         </v-group>
                         <v-group name="sex">
                             <p>你的性别是？</p>

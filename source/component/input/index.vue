@@ -1,7 +1,6 @@
 <template>
     <input 
         v-bind:type="type"
-        id="input"
         v-bind:placeholder="placeholder"
         v-bind:class="['v-input',disable?'disable':'']"
         v-bind:disabled='disable'
@@ -13,7 +12,7 @@
 <style lang="less" scoped>
 @import "~style/basic.less";
 
-#input {
+.v-input {
   color: @color-black;
   font-size: 16px;
   border: none;
@@ -30,8 +29,8 @@
     box-shadow: none !important;    
 }
 
-#input:hover,
-#input:focus {
+.v-input:hover,
+.v-input:focus {
   box-shadow: 0 0 0 2px @color-main;
 }
 </style>
@@ -66,10 +65,16 @@ export default {
     mounted() {
         this.scope = this.name || this.$parent.name || "";
         if (this.value) {
-            this.$data.vvalue = this.value;
+            this.vvalue = this.value;
             this.$nextTick(() => {
-                this.duang();
+                this.duang(this.vvalue);
             });
+        }
+    },
+    watch:{
+        value(value){
+            this.vvalue = value;
+            this.duang(this.vvalue);
         }
     },
     methods: {

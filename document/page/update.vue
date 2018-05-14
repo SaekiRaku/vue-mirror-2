@@ -6,6 +6,21 @@
 
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.8</h1>
+            <h2>2018-05-14</h2>
+        </v-title>
+        <ul>
+            <li>修复Dropdown变化没有提交到父Group组件的问题</li>
+            <li>修复组件ID冲突问题</li>
+            <li>修复Button组件的文档内容中的拼写错误，增加size属性</li>
+            <li>修复Tab组件的Slide的定位错误</li>
+            <li>修复Tag组件的Utils包引入问题</li>
+            <li>修复Modal组件关闭后仍显示滚动条的问题</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <v-title>
             <h1>Ver 0.0.7</h1>
             <h2>2018-04-19</h2>
         </v-title>

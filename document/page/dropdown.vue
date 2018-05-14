@@ -5,14 +5,16 @@
         <h2>Example</h2>
         <h6>效果演示</h6>
 
-        <v-dropdown value=" ">
-            <v-item>A</v-item>
-            <v-item>B</v-item>
-            <v-item>C</v-item>
-            <v-item>D</v-item>
-            <v-item>E</v-item>
-            <v-item>F</v-item>
-        </v-dropdown>
+        <v-group name="group_dropdown" @change="handle">
+            <v-dropdown :value="fuck">
+                <v-item>A</v-item>
+                <v-item>B</v-item>
+                <v-item>C</v-item>
+                <v-item>D</v-item>
+                <v-item>E</v-item>
+                <v-item>F</v-item>
+            </v-dropdown>
+        </v-group>
 
         <h2>Usage</h2>
         <h6>使用方法</h6>
@@ -127,9 +129,19 @@
 
 <script>
 export default {
+    data(){
+        return {
+            fuck:"123"
+        }
+    },
+    mounted(){
+        setTimeout(()=>{
+            this.fuck = "abc"
+        },1000)
+    },
     methods:{
-        result(data){
-            this.youth.toast(`当前选择：${data.group_radio}`);
+        handle(data){
+            console.log(data);
         }
     }
 }
