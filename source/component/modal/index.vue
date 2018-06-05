@@ -13,97 +13,98 @@
 @import "~style/basic.less";
 
 .v-modal-container {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: @top - 1;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  pointer-events: auto;
-  overflow: auto;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: @top - 1;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    pointer-events: auto;
+    overflow: auto;
 }
 
 .v-modal-container:before {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  width: 0;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
 }
 
 .v-modal {
-  margin: 2*@grid;
-  background: @color-white;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
-  box-shadow: @shadow-high;
-  border-radius: @modal-radius;
+    margin: 2 * @grid;
+    background: @color-white;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    box-shadow: @shadow-high;
+    border-radius: @modal-radius;
 
-  .transition(all,500ms);
+    .transition(all,500ms);
 }
 
 .noevent {
-  pointer-events: none !important;
-  overflow: hidden !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
 }
 
 .hidden {
-  opacity: 0;
-  transform: translate(0px,30px);
+    opacity: 0;
+    transform: translate(0px, 30px);
 }
-
 </style>
 
 <script>
+import mixin from "common/mixin.js";
 import utils from "utils";
 
 export default {
-  props: {
-    name: {
-      type: String
+    mixins: [mixin],
+    props: {
+        name: {
+            type: String
+        },
+        show: {
+            type: Boolean,
+            default: false
+        },
+        canclose: {
+            type: Boolean,
+            default: true
+        }
     },
-    show:{
-      type:Boolean,
-      default:false
+    data() {
+        return {
+            display: false
+        };
     },
-    canclose:{
-      type:Boolean,
-      default:true
-    }
-  },
-  data(){
-    return{
-      display:false
-    }
-  },
-  watch:{
-    show(val){
-      this.$data.display = val;
-    }
-  },
-  mounted() {
-    this.$data.display = this.$props.show;
-    if (!!this.name) {
-      utils.event.registerEvent("modal_" + this.name, this.toggleModal);
-    }
-  },
-  methods: {
-    toggleModal(show) {
-      if(show==undefined){
-        this.$data.display = !this.$data.display;
-      }else{
-        this.$data.display = show;
-      }
+    watch: {
+        show(val) {
+            this.$data.display = val;
+        }
     },
-    close(){
-      if(this.$props.canclose==true){
-          this.$data.display = false;
-      }
+    mounted() {
+        this.$data.display = this.$props.show;
+        if (!!this.name) {
+            utils.event.registerEvent("modal_" + this.name, this.toggleModal);
+        }
+    },
+    methods: {
+        toggleModal(show) {
+            if (show == undefined) {
+                this.$data.display = !this.$data.display;
+            } else {
+                this.$data.display = show;
+            }
+        },
+        close() {
+            if (this.$props.canclose == true) {
+                this.$data.display = false;
+            }
+        }
     }
-  }
 };
 </script>

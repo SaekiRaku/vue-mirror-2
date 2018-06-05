@@ -4,7 +4,7 @@
             <div class="v-tab-slide" :style="{'width':width+'px','left':position+'px','top':top+'px'}"></div>
             <div class="tab" v-for="(tab, index) in tabs" :key="index" @click="active(index)" :ref="'tabs_'+index">{{tab}}</div>
         </div>
-        <div class="v-tab-content">
+        <div ref="content" class="v-tab-content">
             <slot>
 
             </slot>
@@ -63,9 +63,11 @@
 </style>
 
 <script>
+import mixin from "common/mixin.js";
 import utils from "utils";
 
 export default {
+    mixins: [mixin],
     props: {
         align: {
             //对齐模式
@@ -79,19 +81,19 @@ export default {
             tabs: [],
             now: 0,
 
-            top:0,
-            width:0,
-            position:0
+            top: 0,
+            width: 0,
+            position: 0
         };
     },
     mounted() {
         if (!this.name) {
             return;
         }
-        utils.event.registerEvent(`tab_add_${this.name}`, this.addTab);
-        this.$nextTick(()=>{
+        utils.event.registerEvent(`page_add_${this.name}`, this.addTab);
+        this.$nextTick(() => {
             this.active(0);
-        })
+        });
     },
     methods: {
         addTab(data) {
@@ -99,15 +101,17 @@ export default {
         },
         active(index) {
             this.now = index;
-            this.$nextTick(()=>{
-                if(!!this.$refs["tabs_"+index][0]){
-                    this.width = this.$refs["tabs_"+index][0].offsetWidth;
-                    this.top = this.$refs["tabs_"+index][0].offsetHeight;
-                    console.log(this.top);
-                    this.position = this.$refs["tabs_"+index][0].offsetLeft;
+            this.$nextTick(() => {
+                if (!!this.$refs["tabs_" + index][0]) {
+                    this.width = this.$refs["tabs_" + index][0].offsetWidth;
+                    this.top = this.$refs["tabs_" + index][0].offsetHeight;
+                    this.position = this.$refs["tabs_" + index][0].offsetLeft;
                 }
-            })
-            utils.event.triggerEvent(`tab_active_${this.name}`, this.tabs[index]);
+            });
+            utils.event.triggerEvent(
+                `page_active_${this.name}`,
+                this.tabs[index]
+            );
         }
     }
 };

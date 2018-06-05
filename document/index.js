@@ -31,7 +31,10 @@ const routes = [
     {path:"/avatar",component :require("page/avatar.vue").default},
     {path:"/tag",component :require("page/tag.vue").default},
     {path:"/tab",component :require("page/tab.vue").default},
-    {path:"/document",component :require("page/document.vue").default}
+    {path:"/roller",component :require("page/roller.vue").default},
+    {path:"/document",component :require("page/document.vue").default},
+
+    {path:"/hook",component :require("page/hook.vue").default},
 ]
 
 

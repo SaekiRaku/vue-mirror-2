@@ -9,7 +9,7 @@
     </p>
     <p>
     </p>
-        <v-button @click="download" type="primary">下载 v0.0.8</v-button>
+        <v-button @click="download" type="primary">下载 v0.0.9</v-button>
 </document>
 </template>
 
@@ -17,7 +17,7 @@
 export default {
   methods:{
       download(){
-          window.open("/download/youth_v0.0.8.zip");
+          window.open("/download/youth_v0.0.9.zip");
       }
   }
 }

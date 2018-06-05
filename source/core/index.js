@@ -12,8 +12,13 @@ function close(name){
     utils.event.triggerEvent("modal_"+name,false);
 }
 
+function registerGlobalEvent(callback){
+    utils.event.registerEvent("global_hook",callback);
+}
+
 export default {
     toast,
     open,
-    close
+    close,
+    registerGlobalEvent
 }

@@ -13,36 +13,38 @@
 @import "~style/basic.less";
 
 .v-input {
-  color: @color-black;
-  font-size: 16px;
-  border: none;
-  border-radius: @input-radius;
-  padding: @grid;
-  outline: none;
-  box-sizing: border-box;
-  box-shadow: 0 0 0 1px @color-gray;  
-  .transition(all,1s);
+    color: @color-black;
+    font-size: 16px;
+    border: none;
+    border-radius: @input-radius;
+    padding: @grid;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px @color-gray;
+    .transition(all,1s);
 }
 
 .disable {
     background: @color-gray;
-    box-shadow: none !important;    
+    box-shadow: none !important;
 }
 
 .v-input:hover,
 .v-input:focus {
-  box-shadow: 0 0 0 2px @color-main;
+    box-shadow: 0 0 0 2px @color-main;
 }
 </style>
 
 <script>
+import mixin from "common/mixin.js";
 import utils from "utils";
 
 export default {
-    data(){
+    mixins: [mixin],
+    data() {
         return {
-            vvalue:''
-        }
+            vvalue: ""
+        };
     },
     props: {
         name: {
@@ -59,7 +61,7 @@ export default {
         },
         value: {
             type: String,
-            default:""
+            default: ""
         }
     },
     mounted() {
@@ -71,8 +73,8 @@ export default {
             });
         }
     },
-    watch:{
-        value(value){
+    watch: {
+        value(value) {
             this.vvalue = value;
             this.duang(this.vvalue);
         }

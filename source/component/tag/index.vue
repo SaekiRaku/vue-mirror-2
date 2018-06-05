@@ -10,8 +10,8 @@
 .v-tag {
     .noselect();
     display: inline-block;
-    padding: @grid 2*@grid;
-    border-radius: 4*@grid;
+    padding: @grid 2 * @grid;
+    border-radius: 4 * @grid;
     cursor: pointer;
     .transition();
 }
@@ -43,9 +43,11 @@
 </style>
 
 <script>
+import mixin from "common/mixin.js";
 import utils from "utils";
 
 export default {
+    mixins: [mixin],
     data() {
         return {
             vactive: false

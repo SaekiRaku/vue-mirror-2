@@ -42,7 +42,7 @@
   pointer-events: none;
   color: @color-gray-dark;
 
-  #checkbox {
+  .v-checkbox-border {
     background: @color-gray;
   }
 }
@@ -82,9 +82,11 @@
 </style>
 
 <script>
+import mixin from "common/mixin.js";
 import utils from "utils";
 
 export default {
+  mixins:[mixin],
   data() {
     return {
       scope: "",

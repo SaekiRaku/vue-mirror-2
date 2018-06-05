@@ -100,7 +100,10 @@
 </style>
 
 <script>
+import mixin from "common/mixin.js";
+
 export default {
+  mixins:[mixin],
   data() {
     return {
       position: {

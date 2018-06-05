@@ -58,7 +58,7 @@
                     按钮类型
                 </td>
                 <td>
-                    normal | pirmary
+                    normal | primary
                 </td>
                 <td>normal</td>
             </tr>

@@ -6,6 +6,18 @@
 
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.9</h1>
+            <h2>2018-06-05</h2>
+        </v-title>
+        <ul>
+            <li>修复 Radio、Checkbox 组件禁用样式失效问题</li>
+            <li>增加全局钩子方法及文档</li>
+            <li>为 Card 组件增加点击事件</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <v-title>
             <h1>Ver 0.0.8</h1>
             <h2>2018-05-14</h2>
         </v-title>

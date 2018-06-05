@@ -6,77 +6,80 @@
 </template>
 
 <style lang="less" scoped>
-    @import "~style/basic.less";
+@import "~style/basic.less";
 
-    .v-message {
-        padding: @grid;
-        color: @color-white;
-        border-radius: @message-radius;
-        .transition();
-        .noselect();
-    }
+.v-message {
+    padding: @grid;
+    color: @color-white;
+    border-radius: @message-radius;
+    .transition();
+    .noselect();
+}
 
-    .normal {
-        background: @color-main;
-    }
+.normal {
+    background: @color-main;
+}
 
-    .danger {
-        background: @color-danger;
-    }
+.danger {
+    background: @color-danger;
+}
 
-    .v-message-close {
-        cursor: pointer;
-        width: 12px;
-        height: 12px;
-        float: right;
-        padding: 4px;
+.v-message-close {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    float: right;
+    padding: 4px;
 
-        .transition();
-    }
+    .transition();
+}
 
-    .hidden {
-        height: 0px;
-        padding: 0px;
-        opacity: 0;
-        transform: scale(0.9);
-        pointer-events: none;
-    }
+.hidden {
+    height: 0px;
+    padding: 0px;
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
 
-    #close:hover {
-        transform: rotate(90deg);
-    }
+#close:hover {
+    transform: rotate(90deg);
+}
 </style>
 
 <script>
+import mixin from "common/mixin.js";
+
 export default {
-    data(){
+    mixins: [mixin],
+    data() {
         return {
-            vshow:false,
-        }
+            vshow: false
+        };
     },
-    props:{
-        type:{
-            type:String,
-            default:"normal"
+    props: {
+        type: {
+            type: String,
+            default: "normal"
         },
         canclose: {
-            type:Boolean,
-            default:false
+            type: Boolean,
+            default: false
         },
-        show:{
-            type:Boolean,
-            default:false
+        show: {
+            type: Boolean,
+            default: false
         }
     },
-    watch:{
-        show(){
+    watch: {
+        show() {
             this.$data.vshow = this.show;
         }
     },
-    methods:{
-        close(){
+    methods: {
+        close() {
             this.$data.vshow = false;
         }
     }
-}
+};
 </script>

@@ -3,46 +3,49 @@
 </template>
 
 <style lang="less" scoped>
-  @import "~style/basic.less";
+@import "~style/basic.less";
 
-  .small {
+.small {
     width: 32px;
     height: 32px;
-  }
+}
 
-  .normal {
+.normal {
     width: 48px;
     height: 48px;
-  }
+}
 
-  .large {
+.large {
     width: 64px;
     height: 64px;
-  }
+}
 
-  .circle {
+.circle {
     border-radius: 100%;
-  }
+}
 
-  .rectangle {
+.rectangle {
     border-radius: @avatar-radius;
-  }
+}
 </style>
 
 <script>
+import mixin from "common/mixin.js";
+
 export default {
-  props: {
-    src: {
-      type: String
-    },
-    size: {
-      type: String,
-      default: "normal"
-    },
-    shape: {
-      type: String,
-      default: "circle"
+    mixins: [mixin],
+    props: {
+        src: {
+            type: String
+        },
+        size: {
+            type: String,
+            default: "normal"
+        },
+        shape: {
+            type: String,
+            default: "circle"
+        }
     }
-  }
-}
+};
 </script>

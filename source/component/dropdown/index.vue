@@ -24,7 +24,7 @@
 }
 
 .v-dropdown-box {
-    padding: 0px 2*@grid;
+    padding: 0px 2 * @grid;
     line-height: 40px;
     min-height: 40px;
     box-shadow: 0 0 0 1px @color-gray;
@@ -56,7 +56,7 @@
     .transition();
 
     .v-item {
-        padding: 2*@grid;
+        padding: 2 * @grid;
         display: block;
         .transition();
     }
@@ -81,10 +81,11 @@
 </style>
 
 <script>
+import mixin from "common/mixin.js";
 import utils from "utils";
-import { DH_UNABLE_TO_CHECK_GENERATOR } from "constants";
 
 export default {
+    mixins: [mixin],
     data() {
         return {
             vvalue: "请选择...",
@@ -129,8 +130,8 @@ export default {
             this.toggle = false;
         });
     },
-    watch:{
-        value(value){
+    watch: {
+        value(value) {
             this.vvalue = value || "请选择...";
             if (this.vvalue != "请选择...") {
                 var eventData = {

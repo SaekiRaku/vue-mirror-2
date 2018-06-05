@@ -2,6 +2,7 @@ import VRipple from "common/ripple/index.vue";
 import VToast from "common/toast/index.vue";
 import VMask from "common/mask/index.vue";
 import VItem from "common/item/index.vue";
+import VPage from "common/page/index.vue";
 
 import VButton from "component/button/index.vue";
 import VInput from "component/input/index.vue";
@@ -17,7 +18,7 @@ import VAvatar from "component/avatar/index.vue";
 import VTag from "component/tag/index.vue";
 
 import VTab from "component/tab/tab.vue";
-import VPage from "component/tab/page.vue";
+// import VRoller from "component/roller/index.vue";
 
 import VTitle from "component/document/title.vue";
 import VQuote from "component/document/quote.vue";
@@ -29,6 +30,7 @@ var components = {
     VToast,
     VMask,
     VItem,
+    VPage,
     
     VButton,
     VInput,
@@ -44,8 +46,8 @@ var components = {
     VTag,
 
     VTab,
-    VPage,
-
+    // VRoller,
+    
     VTitle,
     VQuote,
     VDivider,
