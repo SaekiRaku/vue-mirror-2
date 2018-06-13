@@ -21,6 +21,7 @@ import VTab from "component/tab/tab.vue";
 // import VRoller from "component/roller/index.vue";
 
 import VTitle from "component/document/title.vue";
+import VSubtitle from "component/document/subtitle.vue";
 import VQuote from "component/document/quote.vue";
 import VDivider from "component/document/divider.vue";
 import VText from "component/document/text.vue";
@@ -49,6 +50,7 @@ var components = {
     // VRoller,
     
     VTitle,
+    VSubtitle,
     VQuote,
     VDivider,
     VText

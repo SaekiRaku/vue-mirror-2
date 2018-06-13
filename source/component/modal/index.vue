@@ -74,6 +74,12 @@ export default {
         canclose: {
             type: Boolean,
             default: true
+        },
+        onopen: {
+            type: Function
+        },
+        onclose: {
+            type: Function
         }
     },
     data() {
@@ -84,6 +90,13 @@ export default {
     watch: {
         show(val) {
             this.$data.display = val;
+        },
+        display(val){
+            if(!!val){
+                this.onopen && this.onopen();
+            }else{
+                this.onclose && this.onclose();
+            }
         }
     },
     mounted() {

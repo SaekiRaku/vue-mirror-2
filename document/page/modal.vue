@@ -118,6 +118,26 @@
                 </td>
                 <td>true</td>
             </tr>
+            <tr>
+                <td>onopen</td>
+                <td>
+                    模态窗被打开时触发事件
+                </td>
+                <td>
+                    Function
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>onclose</td>
+                <td>
+                    模态窗被关闭时触发事件
+                </td>
+                <td>
+                    Function
+                </td>
+                <td></td>
+            </tr>
         </table>
 
         <h2>Functions</h2>

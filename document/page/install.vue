@@ -9,16 +9,21 @@
     </p>
     <p>
     </p>
-        <v-button @click="download" type="primary">下载 v0.0.9</v-button>
+        <v-button @click="download" type="primary">下载 {{version}}</v-button>
 </document>
 </template>
 
 <script>
 export default {
-  methods:{
-      download(){
-          window.open("/download/youth_v0.0.9.zip");
-      }
-  }
-}
+    data(){
+        return {
+            version:"v0.0.10"
+        }
+    },
+    methods: {
+        download() {
+            window.open(`/download/youth_${this.version}.zip`);
+        }
+    }
+};
 </script>

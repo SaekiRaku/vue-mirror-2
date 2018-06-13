@@ -104,7 +104,7 @@ export default {
             this.$nextTick(() => {
                 if (!!this.$refs["tabs_" + index][0]) {
                     this.width = this.$refs["tabs_" + index][0].offsetWidth;
-                    this.top = this.$refs["tabs_" + index][0].offsetHeight;
+                    this.top = this.$refs["tabs_" + index][0].offsetHeight - 2;
                     this.position = this.$refs["tabs_" + index][0].offsetLeft;
                 }
             });

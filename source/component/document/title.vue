@@ -1,15 +1,16 @@
 <template>
-    <div class="v-title">
+    <span class="v-title">
         <slot>
 
         </slot>
-    </div>
+    </span>
 </template>
 
 <style lang="less" scoped>
     @import "~style/basic.less";
 
     .v-title {
+        display: block;
         border-left: 2px solid @color-main;
         padding-left: 2*@grid;
         margin: 4*@grid 0px;

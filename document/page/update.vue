@@ -6,6 +6,18 @@
 
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.10</h1>
+            <h2>2018-06-13</h2>
+        </v-title>
+        <ul>
+            <li>为 Modal 组件增加打开/关闭回调事件</li>
+            <li>将 Tab 组件的滑块上移 2px</li>
+            <li>增加 Subtitle 次级标题组件</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <v-title>
             <h1>Ver 0.0.9</h1>
             <h2>2018-06-05</h2>
         </v-title>
