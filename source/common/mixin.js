@@ -13,6 +13,7 @@ export default {
     methods:{
         TriggerGlobalHook(type){
             var data = {
+                "__vue__":this,
                 type: type,
                 name: this["hook-name"],
                 describe: this["hook-desc"]

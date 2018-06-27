@@ -15,6 +15,8 @@
             <span>&nbsp;&nbsp;{{value}}</span>
         </div>
 
+        <v-textarea></v-textarea>
+
         <h2>Usage</h2>
         <h6>使用方法</h6>
 

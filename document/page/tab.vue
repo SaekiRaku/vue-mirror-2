@@ -5,7 +5,7 @@
       <h2>Example</h2>
       <h6>效果演示</h6>
 
-      <v-tab>
+      <v-tab :active="1">
           <v-page title="Page 1">
             <v-text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam in aut ratione! Voluptas explicabo distinctio aut illum reiciendis in ea perferendis? Magni eligendi facere quae, rerum asperiores alias officiis soluta.
@@ -47,6 +47,16 @@
               <th>释义</th>
               <th>可用值</th>
               <th>默认值</th>
+          </tr>
+          <tr>
+              <td>active</td>
+              <td>
+                  当前选中的页面
+              </td>
+              <td>
+                  Number - 页面索引，从0开始
+              </td>
+              <td>0</td>
           </tr>
           <tr>
               <td>align</td>

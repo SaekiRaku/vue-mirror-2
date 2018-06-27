@@ -6,6 +6,19 @@
 
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.11</h1>
+            <h2>2018-06-27</h2>
+        </v-title>
+        <ul>
+            <!-- <li>TODO: Group 表单组件增加初始化功能</li> -->
+            <li>增加 Textarea 文本域组件</li>
+            <li>全局钩子回调数据中加入组件 Vue 实例</li>
+            <li>将 youth 对象注册到 Vue 全局方法中</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <v-title>
             <h1>Ver 0.0.10</h1>
             <h2>2018-06-13</h2>
         </v-title>

@@ -6,6 +6,7 @@ import VPage from "common/page/index.vue";
 
 import VButton from "component/button/index.vue";
 import VInput from "component/input/index.vue";
+import VTextarea from "component/textarea/index.vue";
 import VSwitch from "component/switch/index.vue";
 import VGroup from "component/group/index.vue";
 import VRadio from "component/radio/index.vue";
@@ -35,6 +36,7 @@ var components = {
     
     VButton,
     VInput,
+    VTextarea,
     VSwitch,
     VGroup,
     VRadio,
@@ -61,6 +63,7 @@ export default {
         for(var i in components){
             var res = Vue.component(i,components[i]);
         }
+        Vue.youth = require("core/index.js");
         Vue.prototype.youth = require("core/index.js");
 
         if (!!document) {

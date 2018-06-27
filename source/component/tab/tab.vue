@@ -2,7 +2,7 @@
     <div class="v-tab">
         <div :class="['v-tab-header',align]">
             <div class="v-tab-slide" :style="{'width':width+'px','left':position+'px','top':top+'px'}"></div>
-            <div class="tab" v-for="(tab, index) in tabs" :key="index" @click="active(index)" :ref="'tabs_'+index">{{tab}}</div>
+            <div class="tab" v-for="(tab, index) in tabs" :key="index" @click="duang(index)" :ref="'tabs_'+index">{{tab}}</div>
         </div>
         <div ref="content" class="v-tab-content">
             <slot>
@@ -69,6 +69,10 @@ import utils from "utils";
 export default {
     mixins: [mixin],
     props: {
+        active: {
+            type: Number,
+            default: 0
+        },
         align: {
             //对齐模式
             type: String,
@@ -86,20 +90,25 @@ export default {
             position: 0
         };
     },
+    watch:{
+        active(newVal){
+            this.duang(newVal);
+        }
+    },
     mounted() {
         if (!this.name) {
             return;
         }
         utils.event.registerEvent(`page_add_${this.name}`, this.addTab);
         this.$nextTick(() => {
-            this.active(0);
+            this.duang(this.active || 0);
         });
     },
     methods: {
         addTab(data) {
             this.tabs.push(data);
         },
-        active(index) {
+        duang(index) {
             this.now = index;
             this.$nextTick(() => {
                 if (!!this.$refs["tabs_" + index][0]) {
