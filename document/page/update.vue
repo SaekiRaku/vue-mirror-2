@@ -4,13 +4,26 @@
         更新日志 / Update
     </h1>
 
+    <!-- <li>TODO: Group 表单组件增加初始化功能</li> -->
+
     <div class="block">
         <v-title>
+            <h1>Ver 0.0.12</h1>
+            <h2>2018-08-01</h2>
+        </v-title>
+        <ul>
+            <li>修复 Modal 组件的事件错误</li>
+            <li>调整 Modal 组件中 z-index 的值</li>
+            <li>为 Tag 组件增加 size 属性</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <!-- <v-title> -->
             <h1>Ver 0.0.11</h1>
             <h2>2018-06-27</h2>
         </v-title>
         <ul>
-            <!-- <li>TODO: Group 表单组件增加初始化功能</li> -->
             <li>增加 Textarea 文本域组件</li>
             <li>全局钩子回调数据中加入组件 Vue 实例</li>
             <li>将 youth 对象注册到 Vue 全局方法中</li>

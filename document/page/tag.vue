@@ -10,6 +10,7 @@
         <v-tag :active="true">标签 3（默认选中）</v-tag>
         <v-tag>标签 4</v-tag>
         <v-tag>标签 5</v-tag>
+        <v-tag size="small">标签 6</v-tag>
 
         <h2>Usage</h2>
         <h6>使用方法</h6>
@@ -40,6 +41,16 @@
                     Boolean
                 </td>
                 <td>false</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>
+                    尺寸
+                </td>
+                <td>
+                    normal | small
+                </td>
+                <td>normal</td>
             </tr>
         </table>
 
